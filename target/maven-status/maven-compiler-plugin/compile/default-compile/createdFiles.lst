@@ -1,4 +1,5 @@
 numberrangesummarizer\NumberRangeSummarizer.class
-numberrangesummarizer\Demo.class
+numberrangesummarizer\CommandLineDemo.class
+numberrangesummarizer\InteractiveDemo.class
 numberrangesummarizer\NumberRangeSummarizerImpl.class
 com\example\app\App.class
