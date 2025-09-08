@@ -1,4 +1,4 @@
-# Number Range Summarizer
+# Number Range Summarizer - Completed
 
 A Java implementation that parses comma-separated integers and summarizes consecutive numbers into ranges.
 
