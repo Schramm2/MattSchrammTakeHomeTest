@@ -2,13 +2,22 @@
 
 A Java implementation that parses comma-separated integers and summarizes consecutive numbers into ranges.
 
-## Features
+## Problem Statement
 
-- Parses comma-separated strings of numbers (handles spaces)
-- Sorts numbers in ascending order and removes duplicates
-- Compresses consecutive numbers into ranges (e.g., `6-8`)
-- Handles invalid input with proper error messages
-- Comprehensive test suite
+Given a comma-separated string of integers, parse them into a sorted collection and summarize consecutive numbers into ranges.
+
+**Sample Input/Output:**
+- Input: `"1,3,6,7,8,12,13,14,15,21,22,23,24,31"`
+- Output: `"1, 3, 6-8, 12-15, 21-24, 31"`
+
+## Assumptions
+
+- **Invalid tokens fail fast**: Any non-integer token throws `IllegalArgumentException`
+- **Supports negatives**: Handles negative numbers correctly (e.g., `-3--1`)
+- **Output sorted**: Numbers are always sorted in ascending order
+- **Treats duplicates as set**: Duplicate numbers are removed during collection
+- **Empty tokens ignored**: Empty or whitespace-only tokens are filtered out
+- **Consecutive ranges**: Only consecutive numbers are compressed into ranges
 
 ## Usage
 
@@ -54,11 +63,19 @@ String result = summarizer.summarizeCollection(numbers);
 | `1, 3, 5, 7, 9` | `1, 3, 5, 7, 9` |
 | `1, 2, 3, 5, 6, 7, 10` | `1-3, 5-7, 10` |
 
-## Running Tests
+## How to Build/Run Tests
 
 ```bash
-mvn test
+mvn -q -DskipTests=false test
 ```
+
+## Technical Details
+
+- **Java version**: 1.8
+- **Complexity**: 
+  - `collect()`: O(n log n) due to sorting and duplicate removal
+  - `summarizeCollection()`: O(n) for range compression
+- **Dependencies**: JUnit 5 for testing
 
 ## Requirements
 
